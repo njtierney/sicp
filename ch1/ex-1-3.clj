@@ -18,3 +18,5 @@
 (two-largest-sumsq 1 2 3)
 (two-largest-sumsq 3 2 1)
 (two-largest-sumsq 4 7 8)
+
+(+ 1 1)
