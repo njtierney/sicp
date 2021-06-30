@@ -102,3 +102,76 @@ Quote:
 > It's important to get names for things. One of the things a sorcerer will tell you is that if you know the name of a thing, we have power over it.
 
 # Start of second segment
+
+Can you imagine in your mind the resulting image of an image taken with a camer
+
+So, we try and understand how we can add two numbers together in some different ways.
+
+The first way:
+
+```
+(DEFINE (+ X Y)
+  (IF (= X 0)
+       Y
+       (+ (-1+ X)(1+ Y))))
+```
+
+```
+(+ 3 4)
+```
+
+This becomes...
+
+```
+(+ 2 5)
+(+ 1 6)
+(+ 0 7)
+7
+```
+
+But the other program is a bit different:
+
+
+```
+(DEFINE (+ X Y)
+  (IF (= X 0)
+      Y
+      (1+ (+ (-1+ X) Y))))
+```
+
+So:
+
+```
+(+ 3 4)
+(1+ (+ 2 4))
+(1+ (1+ (+ 1 4)))
+(1+ (1+ (1+ (+ 0 4))))
+(1+ (1+ (1+ 4)))
+(1+ (1+ (5)))
+(1+ (6))
+(7)
+```
+
+Wow! So this is so neat, the shapes of these two problems are different.
+
+Oh dang. So how do we evaluate these.
+
+The first one is:
+
+A Linear Iteration:
+time = O(X)
+space = O(1)
+
+The second one is quite different!
+
+A Linear Recursion
+time = O(X)
+space = O(X)
+
+It is proportional to the input argument in both time and space
+
+So now we can have iterative and recursive definitions.
+
+Recursion defers the computation to later
+
+# Part Three
