@@ -174,4 +174,70 @@ So now we can have iterative and recursive definitions.
 
 Recursion defers the computation to later
 
-# Part Three
+# Part Three - text selection
+
+Fibonacci Numbers
+
+n = 1 2 2 3 4 5 6 7  8  9  10
+v = 0 1 1 2 3 5 8 13 21 34 53 
+
+So, given an `n` - can we calculate the fibonacci sequence
+
+```
+(DEFINE (FIB N)
+  IF (< N 2)
+     N
+     (+ (FIB (- n 1))
+        (FIB (- n 2))))
+```
+
+```
+(FIB 4)
+|-(FIB (3))
+  |-(FIB (2))
+    |-(FIB (1))
+      |-(FIB (0))
+  |-(FIB (1))
+    |-(FIB (0))
+|-(FIB (2))
+  |-(FIB (1))
+    |-1
+  |-(FIB (0))
+    |-0
+```
+
+This thing takes forever, and repeats itself, there 
+
+time = O(fib(n)) (it grows exactly as fibonnaci)
+space = O(n) (it grows according to the number of n provided)
+
+### Tower of Hanoi
+
+```
+(DEFINE (MOVE N FROM TO SPARE)
+  (COND ((= N 0) "DONE")
+        (else
+         (MOVE (-1+ N) FROM SPARE TO)
+         (PRINT -MOVE FROM TO)
+         (MOVE (-1+ N) SPARE TO FROM))))
+```
+
+So the general way of making these kinds of moves is a tree, so it is similar to the fibonnaci process.
+
+(MOVE 4 1 2 3)
+(MOVE 3 1 3 2) ...
+(MOVE 2 1 2 3) ...
+(MOVE 1 1 3 2) ...
+
+SO this is exponential...
+
+Is there a way to write this in a way that doesn't break it into two sub problems
+...
+
+Is it possible to write it out in a way that is iterative?
+
+
+
+quotes:
+
+> The way you construct a recursive process if by wishful thinking - you have to _believe_
